@@ -7,26 +7,26 @@ const Home = () => {
   const [enquiry, setEnquiry] = useState(false);
   const [email, setEmail] = useState("");
 
-  function handleEnquiry(e) {
-    e.preventDefault();
+//   function handleEnquiry(e) {
+//     e.preventDefault();
 
-    if (!email) {
-      alert("Please enter your email.");
-      return;
-    }
+//     if (!email) {
+//       alert("Please enter your email.");
+//       return;
+//     }
 
-    axios
-      .post("http://localhost:5000/enquiry", { email })
-      .then((res) => {
-        console.log(res);
-        setEnquiry(false); // Hide email input after submission
-        setEmail(""); // Reset the email field
-      })
-      .catch((err) => {
-        console.log(err);
-        alert("There was an error submitting your enquiry.");
-      });
-  }
+//     axios
+//       .post("http://localhost:5000/enquiry", { email })
+//       .then((res) => {
+//         console.log(res);
+//         setEnquiry(false); // Hide email input after submission
+//         setEmail(""); // Reset the email field
+//       })
+//       .catch((err) => {
+//         console.log(err);
+//         alert("There was an error submitting your enquiry.");
+//       });
+//   }
 
   return (
     <div className="relative">
@@ -79,7 +79,7 @@ const Home = () => {
                 style={{ color: "black" }}
               />
               <button
-                onClick={handleEnquiry}
+                onClick={() => handleEnquiry}
                 className="bg-blue-500 text-white px-6 py-3 rounded-lg mt-4 md:ml-2"
               >
                 Submit
