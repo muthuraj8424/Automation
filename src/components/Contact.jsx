@@ -1,34 +1,42 @@
 import React, { useState } from "react";
 import axios from "axios";
+import { useParams, useNavigate } from "react-router-dom";
 
 const ContactForm = () => {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const { p_name } = useParams();
+  const navigate = useNavigate(); // Hook to handle navigation
 
-//   const handleSubmit = async (e) => {
-//     e.preventDefault();
+  const handleSubmit = async (e) => {
+    e.preventDefault();
 
-//     try {
-//       await axios.post("http://localhost:5000/contact", {
-//         name,
-//         email,
-//         message,
-//       });
-//       alert("Your message has been sent!");
-//       setName("");
-//       setEmail("");
-//       setMessage("");
-//     } catch (error) {
-//       console.error("Error:", error);
-//       alert("Failed to send your message. Please try again later.");
-//     }
-//   };
+    try {
+      // Make the POST request to the backend
+      const response = await axios.post("http://localhost:5000/send-email", {
+        name,
+        email,
+        p_name,
+        message,
+      });
+
+      if (response.status === 200) {
+        alert("Your message has been sent!"); // Success message
+        navigate("/"); // Redirect to home page
+      }
+    } catch (error) {
+      console.error("Error:", error);
+      alert("Failed to send your message. Please try again later.");
+    }
+  };
 
   return (
     <div className="max-w-lg mx-auto p-6 bg-white shadow-lg rounded-lg mt-8">
-      <h2 className="text-2xl font-semibold text-center mb-6 text-blue-600">Contact Us</h2>
-      <form onSubmit={() => handleSubmit} className="space-y-4">
+      <h2 className="text-2xl font-semibold text-center mb-6 text-blue-600">
+        Enquiry for {p_name}
+      </h2>
+      <form onSubmit={handleSubmit} className="space-y-4">
         <div>
           <input
             type="text"
@@ -45,6 +53,15 @@ const ContactForm = () => {
             placeholder="Your Email"
             value={email}
             onChange={(e) => setEmail(e.target.value)}
+            required
+            className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
+          />
+        </div>
+        <div>
+          <input
+            type="text"
+            value={p_name}
+            readOnly
             required
             className="w-full p-3 border border-gray-300 rounded-md focus:outline-none focus:ring-2 focus:ring-blue-500"
           />

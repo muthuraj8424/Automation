@@ -11,17 +11,7 @@ function Aboutjs() {
             About Us
           </h1>
           <p className="text-lg text-gray-700 leading-relaxed text-justify mb-6">
-            At ShopMate, we’re more than just a marketplace; we’re a platform
-            built on trust, quality, and innovation. Since our inception in{" "}
-            <span className="font-semibold text-indigo-600">2010</span>, our
-            mission has been to simplify shopping by offering premium products
-            at unbeatable prices. We pride ourselves on exceptional service,
-            ensuring every customer feels valued. From the latest gadgets to
-            everyday essentials, we curate the best for you. Committed to
-            sustainability and ethical practices, we aim to create a positive
-            impact on the community and environment. Thank you for choosing
-            ShopMate—where convenience meets quality, and shopping becomes a
-            delightful experience. Together, let’s redefine online shopping!
+          Welcome to Karyoun Innovation, the leading Ed-tech company that is revolutionizing the way businesses and educational institutions collaborate for technological advancement and growth. At Karyoun Innovation, we are dedicated to providing cutting-edge solutions that bridge the gap between education, technology, and business.
           </p>
         </div>
       </div>
@@ -43,10 +33,7 @@ function Aboutjs() {
               Why Choose Magizh?
             </h2>
             <p className="text-lg text-gray-700 leading-relaxed mb-6">
-              At ShopMate, we strive to deliver the best shopping experience
-              through our unique blend of customer service, innovative
-              technology, and commitment to quality. Here's why customers choose
-              us:
+            Welcome to Karyoun Innovation, the leading Ed-tech company that is revolutionizing the way businesses and educational institutions collaborate for technological advancement and growth. At Karyoun Innovation, we are dedicated to providing cutting-edge solutions that bridge the gap between education, technology, and business.
             </p>
             <ul className="list-disc list-inside text-gray-700 space-y-3">
               <li>Competitive pricing for high-quality products</li>

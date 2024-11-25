@@ -2,25 +2,29 @@ import React from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Navbar from "./components/Navbar";
 import Aboutjs from "./components/Aboutjs";
-import Products from "./components/Products";
+// import Products from "./components/Products";
 import Contact from "./components/Contact";
 import Home from "./components/Home";
-import "./App.css"
-import Gate_auto from "./components/Gate_auto";
-import Home_auto from "./components/Home_auto";
+import ProductDetails from "./components/ProductListing";
+// import { CartProvider } from "./components/CartContext";
+// import Cart from "./components/Cart";
+// // import Contactcom from "./components/ContactCom";
 function App() {
   return (
-    <Router>
-      <Navbar />
-      <Routes>
-        <Route path="/" element={<Home />} />
-        <Route path="/AboutUS" element={<Aboutjs />} />
-        <Route path="/Products" element={<Products />} />
-        <Route path="/Contact" element={<Contact />} />
-        <Route path="/Home_auto" element={<Home_auto />} />
-        <Route path="/Gate_auto" element={<Gate_auto />} />
-      </Routes>
-    </Router>
+   
+      <Router>
+        <Navbar />
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/AboutUS" element={<Aboutjs />} />
+          {/* <Route path="/Products" element={<Products />} />
+          <Route path="/conatct" element={<Contactcom />} /> */}
+          <Route path="//enquiry/:p_name" element={<Contact />} />
+          <Route path="/product-listing/:id" element={<ProductDetails />} />
+          {/* <Route path="/cart" element={<Cart />} /> */}
+        </Routes>
+      </Router>
+   
   );
 }
 
